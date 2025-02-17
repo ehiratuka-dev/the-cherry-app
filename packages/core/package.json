@@ -1,0 +1,10 @@
+{
+  "name": "@the-cherry-25/core",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "dependencies": {
+    "@the-cherry-25/types": "*"
+  }
+}

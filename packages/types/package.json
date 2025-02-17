@@ -1,0 +1,7 @@
+{
+  "name": "@the-cherry-25/types",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc --build"
+  }
+}

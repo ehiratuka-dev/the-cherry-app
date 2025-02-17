@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "composite": true, // Habilita compilação incremental entre pacotes
+    "module": "commonjs", // Define o módulo
+    "target": "es6", // Define o alvo de compilação para ES6
+    "declaration": true, // Gera arquivos de declaração .d.ts
+    "declarationMap": true, // Gera mapas de declaração para depuração
+    "outDir": "./dist", // Define o diretório de saída para os arquivos compilados
+    "rootDir": "./packages", // Define o diretório raiz dos pacotes
+    "esModuleInterop": true, // Garantir que módulos funcionem de forma intercompatível
+    "skipLibCheck": true, // Pular checagem de tipos nas bibliotecas (aumenta performance)
+    "strict": true, // Habilita o modo estrito de checagem de tipos
+    "resolveJsonModule": true, // Permite importar arquivos .json
+    "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo" // Define um único local para armazenar o arquivo tsbuildinfo
+  },
+  "include": [
+    "packages/**/*" // Inclui todos os arquivos nos pacotes
+  ],
+  "exclude": [
+    "node_modules" // Exclui node_modules para não ser compilado
+  ],
+  "references": [
+    { "path": "./packages/types" },
+    { "path": "./packages/core" },
+    { "path": "./packages/web" }
+  ]
+}
