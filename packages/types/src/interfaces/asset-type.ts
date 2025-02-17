@@ -1,5 +1,5 @@
-import { Profile } from "../models/profile.model.js";
+import { Profile } from '../models/profile.model.js'
 
 export interface AssetType {
-  profile: Profile;
+	profile: Profile
 }
