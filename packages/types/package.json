@@ -1,6 +1,8 @@
 {
   "name": "@the-cherry-25/types",
   "version": "1.0.0",
+  "type": "module",
+  "main": "../../../dist/types/index.js",
   "scripts": {
     "build": "tsc --build"
   }

@@ -1,4 +1,4 @@
-import { AssetType } from "../interfaces/asset-type";
+import { AssetType } from "../interfaces/asset-type.js";
 
 export interface RECs25 extends AssetType {
   assetSrc: string;
