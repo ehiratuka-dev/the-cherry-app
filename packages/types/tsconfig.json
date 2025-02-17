@@ -1,11 +1,9 @@
 {
-  "extends": "../../tsconfig.json", // Referência ao tsconfig principal
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "rootDir": "./src", // Diretório de código-fonte para este pacote
-    "outDir": "../../dist/types", // Diretório de saída para este pacote
+    "rootDir": "./src",
+    "outDir": "../../dist/types",
     "tsBuildInfoFile": "../../dist/core.tsbuildinfo"
   },
-  "include": [
-    "src/**/*" // Inclui todos os arquivos fonte
-  ]
+  "include": ["src/**/*"]
 }
