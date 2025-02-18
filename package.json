@@ -13,9 +13,21 @@
 		"build:types": "npm run build --workspace=@the-cherry-25/types",
 		"build:web": "npm run build --workspace=@the-cherry-25/web",
 		"format": "prettier --check './packages/**/*.{js,ts}'",
+		"format:core": "npm run format --workspace=@the-cherry-25/core",
+		"format:types": "npm run format --workspace=@the-cherry-25/types",
+		"format:web": "npm run format --workspace=@the-cherry-25/web",
 		"format:fix": "prettier --write './packages/**/*.{js,ts}'",
+		"format:core:fix": "npm run format:fix --workspace=@the-cherry-25/core",
+		"format:types:fix": "npm run format:fix --workspace=@the-cherry-25/types",
+		"format:web:fix": "npm run format:fix --workspace=@the-cherry-25/web",
 		"lint": "eslint ./",
+		"lint:core": "npm run lint --workspace=@the-cherry-25/core",
+		"lint:types": "npm run lint --workspace=@the-cherry-25/types",
+		"lint:web": "npm run lint --workspace=@the-cherry-25/web",
 		"lint:fix": "eslint ./ --fix",
+		"lint:core:fix": "npm run lint:fix --workspace=@the-cherry-25/core",
+		"lint:types:fix": "npm run lint:fix --workspace=@the-cherry-25/types",
+		"lint:web:fix": "npm run lint:fix --workspace=@the-cherry-25/web",
 		"index": "tsx packages/core/src/scripts/generate-index.script.ts",
 		"index:prod": "node dist/core/scripts/generate-index.script.js"
 	},
@@ -32,6 +44,7 @@
 		"globals": "^15.14.0",
 		"prettier": "^3.5.0",
 		"ts-node": "^10.9.2",
+		"typedoc": "^0.27.7",
 		"typescript": "^5.7.3"
 	}
 }

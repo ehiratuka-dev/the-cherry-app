@@ -1,11 +1,15 @@
 {
-  "name": "@the-cherry-25/web",
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "build": "tsc --build"
-  },
-  "dependencies": {
-    "@the-cherry-25/types": "*"
-  }
+	"name": "@the-cherry-25/web",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"build": "tsc --build",
+		"format": "prettier --check './src/**/*.{js,ts}'",
+		"format:fix": "prettier --write './src/**/*.{js,ts}'",
+		"lint": "eslint ./",
+		"lint:fix": "eslint ./ --fix"
+	},
+	"dependencies": {
+		"@the-cherry-25/types": "*"
+	}
 }

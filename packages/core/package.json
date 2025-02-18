@@ -1,22 +1,26 @@
 {
-  "name": "@the-cherry-25/core",
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "build": "tsc --build"
-  },
-  "dependencies": {
-    "@the-cherry-25/types": "*",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "exiftool-vendored": "^29.1.0",
-    "express": "^4.21.2",
-    "js-yaml": "^4.1.0"
-  },
-  "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
-    "@types/js-yaml": "^4.0.9",
-    "@types/speakeasy": "^2.0.10"
-  }
+	"name": "@the-cherry-25/core",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"build": "tsc --build",
+		"format": "prettier --check './src/**/*.{js,ts}'",
+		"format:fix": "prettier --write './src/**/*.{js,ts}'",
+		"lint": "eslint ./",
+		"lint:fix": "eslint ./ --fix"
+	},
+	"dependencies": {
+		"@the-cherry-25/types": "*",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.7",
+		"exiftool-vendored": "^29.1.0",
+		"express": "^4.21.2",
+		"js-yaml": "^4.1.0"
+	},
+	"devDependencies": {
+		"@types/cors": "^2.8.17",
+		"@types/express": "^5.0.0",
+		"@types/js-yaml": "^4.0.9",
+		"@types/speakeasy": "^2.0.10"
+	}
 }

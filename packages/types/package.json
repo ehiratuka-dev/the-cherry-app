@@ -1,9 +1,13 @@
 {
-  "name": "@the-cherry-25/types",
-  "version": "1.0.0",
-  "type": "module",
-  "main": "../../../dist/types/index.js",
-  "scripts": {
-    "build": "tsc --build"
-  }
+	"name": "@the-cherry-25/types",
+	"version": "1.0.0",
+	"type": "module",
+	"main": "../../../dist/types/index.js",
+	"scripts": {
+		"build": "tsc --build",
+		"format": "prettier --check './src/**/*.{js,ts}'",
+		"format:fix": "prettier --write './src/**/*.{js,ts}'",
+		"lint": "eslint ./",
+		"lint:fix": "eslint ./ --fix"
+	}
 }
