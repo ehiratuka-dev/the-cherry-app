@@ -1,9 +1,4 @@
-import {
-	Arquivo,
-	AssetType,
-	Profile,
-	PROFILE_MATCH_TYPE,
-} from '@the-cherry-25/types'
+import { Profile, PROFILE_MATCH_TYPE, Arquivo } from '@the-cherry-25/types'
 import { AssetResult } from './asset-type.controller.js'
 import { ParentTypeController } from './parent.controller.js'
 
@@ -18,6 +13,7 @@ export class ArquivoController extends ParentTypeController<Arquivo> {
 	} {
 		const regex = /🗂️ Arquivos 👩‍🦰 (.+) #([0-9]{2})/
 		const match = result.path.match(regex)
+
 		if (match == undefined) {
 			return {
 				profileMatch: '',
@@ -30,6 +26,8 @@ export class ArquivoController extends ParentTypeController<Arquivo> {
 			matchObject: {
 				id: Number(match[2]),
 				assetSrc: result.path,
+				nudometro: 0,
+				data: new Date(),
 			},
 		}
 	}
