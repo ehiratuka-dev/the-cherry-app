@@ -1,24 +1,24 @@
 {
-  "compilerOptions": {
-    "composite": true,
-    "module": "NodeNext",
-    "target": "es6",
-    "moduleResolution": "nodenext",
-    "declaration": true,
-    "declarationMap": true,
-    "outDir": "./dist",
-    "rootDir": "./packages",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "resolveJsonModule": true,
-    "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
-  },
-  "include": ["packages/**/*"],
-  "exclude": ["node_modules"],
-  "references": [
-    { "path": "./packages/types" },
-    { "path": "./packages/core" },
-    { "path": "./packages/web" }
-  ]
+	"compilerOptions": {
+		"composite": true,
+		"module": "NodeNext",
+		"target": "ESNext",
+		"moduleResolution": "nodenext",
+		"declaration": true,
+		"declarationMap": true,
+		"outDir": "./dist",
+		"rootDir": "./packages",
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"resolveJsonModule": true,
+		"tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
+	},
+	"include": ["packages/**/*"],
+	"exclude": ["node_modules"],
+	"references": [
+		{ "path": "./packages/types" },
+		{ "path": "./packages/core" },
+		{ "path": "./packages/web" }
+	]
 }

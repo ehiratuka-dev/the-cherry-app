@@ -1,3 +1,4 @@
+export * from './enums/profile-match-type.enum.js'
 export * from './models/profile.model.js'
 export * from './models/recs.model.js'
 export * from './models/recs25.model.js'
