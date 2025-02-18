@@ -11,7 +11,7 @@ profileController.loadProfilesFromFile('data/profiles.yaml')
 const controller = new AssetTypeController(profileController)
 await controller.mergeAssets<RECs>(new RECsController())
 await controller.mergeAssets<Arquivo>(new ArquivoController())
-// await controller.mergeAssets<RECs25>(new RECs25Controller())
+await controller.mergeAssets<RECs25>(new RECs25Controller())
 await controller.finish()
 
 profileController.dumpProfilesToFile()
