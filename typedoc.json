@@ -9,7 +9,7 @@
 	},
 	"navigation": {
 		"includeCategories": true,
-		"includeGroups": true,
+		"includeGroups": false,
 		"includeFolders": true,
 		"compactFolders": true,
 		"excludeReferences": true

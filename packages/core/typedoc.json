@@ -1,5 +1,4 @@
 {
 	"name": "Core",
-	"entryPoints": ["src/index.ts"],
-	"categorizeByGroup": true
+	"entryPoints": ["src/index.ts"]
 }
