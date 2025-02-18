@@ -1,6 +1,6 @@
 {
 	"name": "🍒 The Cherry 25",
-	"out": "docs",
+	"out": "docs-out",
 	"entryPointStrategy": "packages",
 	"entryPoints": ["packages/*"],
 	"navigationLinks": {
