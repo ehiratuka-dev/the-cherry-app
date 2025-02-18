@@ -2,6 +2,9 @@ import { Profile } from '@the-cherry-25/types'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 
+/**
+ * @category Controller
+ */
 export class ProfileController {
 	private profiles: Profile[] = []
 

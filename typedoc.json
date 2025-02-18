@@ -3,9 +3,15 @@
 	"out": "docs-out",
 	"entryPointStrategy": "packages",
 	"entryPoints": ["packages/*"],
+	"projectDocuments": ["docs/index.md", "docs/scripts.md"],
 	"navigationLinks": {
 		"Hierarquia": "hierarchy.html"
 	},
-	"plugin": ["typedoc-material-theme"],
-	"themeColor": "#cb9820"
+	"navigation": {
+		"includeCategories": true,
+		"includeGroups": true,
+		"includeFolders": true,
+		"compactFolders": true,
+		"excludeReferences": true
+	}
 }

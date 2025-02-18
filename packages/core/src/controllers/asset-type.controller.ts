@@ -1,15 +1,24 @@
 import { AssetType, Profile, PROFILE_MATCH_TYPE } from '@the-cherry-25/types'
 
+/**
+ * @category Assets
+ */
 export interface AssetRequest {
 	path: string
 	metadata: string[] | undefined
 }
 
+/**
+ * @category Assets
+ */
 export interface AssetResponse<T extends AssetType> {
 	profileMatch: string
 	matchObject: Partial<T>
 }
 
+/**
+ * @category Controller
+ */
 export abstract class AssetTypeController<T extends AssetType> {
 	public abstract relativePath: string
 

@@ -5,6 +5,9 @@ import {
 	AssetTypeController,
 } from './asset-type.controller.js'
 
+/**
+ * @category Controller
+ */
 export class RECsController extends AssetTypeController<RECs> {
 	relativePath = '/🎥 RECs/🔥 Hot'
 

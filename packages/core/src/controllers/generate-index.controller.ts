@@ -5,6 +5,9 @@ import { ProfileController } from './profile.controller.js'
 import { AssetTypeController } from './asset-type.controller.js'
 import { AssetType, PROFILE_MATCH_TYPE } from '@the-cherry-25/types'
 
+/**
+ * @category Controller
+ */
 export class GenerateIndexController {
 	private rootPath: string
 
