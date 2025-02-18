@@ -1,16 +1,16 @@
 import { Profile, PROFILE_MATCH_TYPE, RECs25 } from '@the-cherry-25/types'
-import { AssetResult } from './asset-type.controller.js'
-import { ParentTypeController } from './parent.controller.js'
+import {
+	AssetRequest,
+	AssetResponse,
+	ParentTypeController,
+} from './parent.controller.js'
 
 export class RECs25Controller extends ParentTypeController<RECs25> {
 	relativePath = '/🎬 RECs25/🔥 Hot'
 
 	match_type = PROFILE_MATCH_TYPE.BY_ID
 
-	callback(result: AssetResult): {
-		profileMatch: string
-		matchObject: Partial<RECs25>
-	} {
+	public find(result: AssetRequest): AssetResponse<RECs25> {
 		const regex =
 			/RECs25 #([0-9]{2}) ✂️ Clipe #([0-9]{2}) 🔥 Hot #([0-9]{2})/
 		const match = result.path.match(regex)
