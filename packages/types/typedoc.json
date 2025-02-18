@@ -1,0 +1,4 @@
+{
+	"name": "Types",
+	"entryPoints": ["src/index.ts"]
+}

@@ -1,0 +1,4 @@
+{
+	"name": "Web",
+	"entryPoints": ["src/index.ts"]
+}

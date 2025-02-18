@@ -1,3 +1,6 @@
+/**
+ * @module Types
+ */
 export * from './enums/profile-match-type.enum.js'
 export * from './models/asset-type.js'
 export * from './models/profile.model.js'

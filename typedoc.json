@@ -1,0 +1,11 @@
+{
+	"name": "🍒 The Cherry 25",
+	"out": "docs",
+	"entryPointStrategy": "packages",
+	"entryPoints": ["packages/*"],
+	"navigationLinks": {
+		"Hierarquia": "hierarchy.html"
+	},
+	"plugin": ["typedoc-material-theme"],
+	"themeColor": "#cb9820"
+}
