@@ -20,7 +20,7 @@ export default [
 			},
 		},
 		files: ['**/*.ts', '**/*.js'],
-		ignores: ['node_modules/**/*', 'dist/**/*'],
+		ignores: ['node_modules/**/*', 'dist/**/*', 'docs-out/**/*'],
 		plugins: {
 			'@typescript-eslint': typescriptEslint,
 			prettier: prettierPlugin,
