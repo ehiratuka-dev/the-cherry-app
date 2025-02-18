@@ -1,7 +1,7 @@
-import { Arquivo } from './arquivo.model.js'
-import { RECs } from './recs.model.js'
-import { RECs25 } from './recs25.model.js'
-import { SocialMedia } from './social-media.model.js'
+import { Arquivo } from '../asset-types/arquivo.model.js'
+import { RECs } from '../asset-types/recs.model.js'
+import { RECs25 } from '../asset-types/recs25.model.js'
+import { SocialMedia } from '../asset-types/social-media.model.js'
 
 export interface Profile {
 	id: string
