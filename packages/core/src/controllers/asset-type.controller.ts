@@ -10,7 +10,7 @@ export interface AssetResponse<T extends AssetType> {
 	matchObject: Partial<T>
 }
 
-export abstract class ParentTypeController<T extends AssetType> {
+export abstract class AssetTypeController<T extends AssetType> {
 	public abstract relativePath: string
 
 	public abstract match_type: PROFILE_MATCH_TYPE

@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { exiftool } from 'exiftool-vendored'
 import { ProfileController } from './profile.controller.js'
-import { ParentTypeController } from './parent.controller.js'
+import { AssetTypeController } from './asset-type.controller.js'
 import { AssetType, PROFILE_MATCH_TYPE } from '@the-cherry-25/types'
 
 export class GenerateIndexController {
@@ -17,7 +17,7 @@ export class GenerateIndexController {
 
 	private async processFile<T extends AssetType>(
 		filePath: string,
-		parent: ParentTypeController<T>
+		parent: AssetTypeController<T>
 	) {
 		const metadata = await exiftool.read(filePath)
 
@@ -47,7 +47,7 @@ export class GenerateIndexController {
 
 	private async processDirectory<T extends AssetType>(
 		directory: string,
-		parent: ParentTypeController<T>
+		parent: AssetTypeController<T>
 	) {
 		const files = fs.readdirSync(directory)
 
@@ -64,7 +64,7 @@ export class GenerateIndexController {
 	}
 
 	public async mergeAssets<T extends AssetType>(
-		parent: ParentTypeController<T>
+		parent: AssetTypeController<T>
 	) {
 		console.log(`Iniciando leitura de dados em ${parent.relativePath}`)
 

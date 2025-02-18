@@ -2,10 +2,10 @@ import { Profile, PROFILE_MATCH_TYPE, Arquivo } from '@the-cherry-25/types'
 import {
 	AssetRequest,
 	AssetResponse,
-	ParentTypeController,
-} from './parent.controller.js'
+	AssetTypeController,
+} from './asset-type.controller.js'
 
-export class ArquivoController extends ParentTypeController<Arquivo> {
+export class ArquivoController extends AssetTypeController<Arquivo> {
 	relativePath = '/🗂️ Arquivos'
 
 	match_type = PROFILE_MATCH_TYPE.BY_NAME

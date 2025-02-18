@@ -2,10 +2,10 @@ import { Profile, PROFILE_MATCH_TYPE, GIFs } from '@the-cherry-25/types'
 import {
 	AssetRequest,
 	AssetResponse,
-	ParentTypeController,
-} from './parent.controller.js'
+	AssetTypeController,
+} from './asset-type.controller.js'
 
-export class GIFsController extends ParentTypeController<GIFs> {
+export class GIFsController extends AssetTypeController<GIFs> {
 	relativePath = '/💃 GIFs/🔥 Hot'
 
 	match_type = PROFILE_MATCH_TYPE.BY_ID
