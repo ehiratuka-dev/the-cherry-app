@@ -19,13 +19,15 @@ export class GenerateIndexController {
 	}
 
 	private async processFile<T extends AssetType>(
-		filePath: string,
+		directory: string,
+		file: string,
 		parent: AssetTypeController<T>
 	) {
+		const filePath = path.join(directory, file)
 		const metadata = await exiftool.read(filePath)
 
 		const assetResult = parent.find({
-			path: filePath,
+			path: file,
 			metadata: metadata.Subject,
 		})
 
@@ -61,7 +63,7 @@ export class GenerateIndexController {
 			if (stat.isDirectory()) {
 				await this.processDirectory(filePath, parent)
 			} else {
-				await this.processFile(filePath, parent)
+				await this.processFile(directory, file, parent)
 			}
 		}
 	}
