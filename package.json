@@ -8,11 +8,10 @@
 		"packages/*"
 	],
 	"scripts": {
-		"build": "tsc -b",
-		"build:core": "npm run build --workspace=@the-cherry-25/core",
-		"build:types": "npm run build --workspace=@the-cherry-25/types",
-		"build:web": "npm run build --workspace=@the-cherry-25/web",
-		"format": "prettier --check './packages/**/*.{js,ts}'",
+		"build": "./scripts/build.sh",
+		"docs": "./scripts/docs.sh",
+		"lint": "./scripts/lint.sh",
+		"format": "./scripts/format.sh",
 		"format:core": "npm run format --workspace=@the-cherry-25/core",
 		"format:types": "npm run format --workspace=@the-cherry-25/types",
 		"format:web": "npm run format --workspace=@the-cherry-25/web",
@@ -20,7 +19,6 @@
 		"format:core:fix": "npm run format:fix --workspace=@the-cherry-25/core",
 		"format:types:fix": "npm run format:fix --workspace=@the-cherry-25/types",
 		"format:web:fix": "npm run format:fix --workspace=@the-cherry-25/web",
-		"lint": "eslint ./",
 		"lint:core": "npm run lint --workspace=@the-cherry-25/core",
 		"lint:types": "npm run lint --workspace=@the-cherry-25/types",
 		"lint:web": "npm run lint --workspace=@the-cherry-25/web",
@@ -28,9 +26,8 @@
 		"lint:core:fix": "npm run lint:fix --workspace=@the-cherry-25/core",
 		"lint:types:fix": "npm run lint:fix --workspace=@the-cherry-25/types",
 		"lint:web:fix": "npm run lint:fix --workspace=@the-cherry-25/web",
-		"docs": "typedoc",
-		"index": "tsx packages/core/src/scripts/generate-index.script.ts",
-		"index:prod": "node dist/core/scripts/generate-index.script.js"
+		"index": "tsx watch packages/core/src/scripts/generate-index.script.ts",
+		"index:prod": "tsx dist/core/scripts/generate-index.script.js"
 	},
 	"keywords": [],
 	"author": "",
@@ -39,16 +36,14 @@
 		"@types/node": "^22.13.1",
 		"@typescript-eslint/eslint-plugin": "^8.24.0",
 		"@typescript-eslint/parser": "^8.24.0",
+		"badge-maker": "^4.1.0",
 		"eslint": "^9.20.1",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-prettier": "^5.2.3",
-		"globals": "^15.14.0",
+		"globals": "^15.15.0",
 		"prettier": "^3.5.0",
-		"ts-node": "^10.9.2",
 		"typedoc": "^0.27.7",
-		"typedoc-material-theme": "^1.3.0",
 		"typedoc-plugin-coverage": "^3.4.1",
-		"typedoc-plugin-markdown": "^4.4.2",
 		"typescript": "^5.7.3"
 	}
 }

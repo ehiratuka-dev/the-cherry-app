@@ -12,11 +12,7 @@ export default [
 			globals: {
 				...globals.browser,
 				...globals.node,
-				...globals.es2021,
-			},
-			parserOptions: {
-				ecmaVersion: 2020,
-				sourceType: 'module',
+				...globals.es2025,
 			},
 		},
 		files: ['**/*.ts', '**/*.js'],
@@ -31,7 +27,6 @@ export default [
 			'prettier/prettier': ['error'],
 			'@typescript-eslint/no-explicit-any': 'warn',
 			'@typescript-eslint/explicit-module-boundary-types': 'off',
-			'no-console': 'warn',
 			'no-debugger': 'error',
 			'linebreak-style': ['error', 'unix'],
 		},

@@ -13,5 +13,7 @@
 		"includeFolders": true,
 		"compactFolders": true,
 		"excludeReferences": true
-	}
+	},
+	"plugin": ["typedoc-plugin-coverage"],
+	"coverageOutputType": "json"
 }
