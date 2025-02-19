@@ -1,4 +1,4 @@
-name: Compilar e Publicar Documentação no GitHub Pages
+name: Publicar Documentação
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout do Repositório
+      - name: Checkout do repositório
         uses: actions/checkout@v3
 
       - name: Configurar NodeJS
@@ -29,23 +29,26 @@ jobs:
         with:
           node-version: 22
 
-      - name: Instalar Dependências
+      - name: Instalar dependências
         run: npm install
   
-      - name: Compilar Pacotes
+      - name: Modificar permissões de scripts
+        run: chmod +x scripts/*
+        
+      - name: Compilar pacotes
         run: npm run build
 
-      - name: Compilar Documentação
+      - name: Compilar documentação
         run: npm run docs
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Envia Documentação
+      - name: Enviar documentação
         uses: actions/upload-pages-artifact@v3
         with:
           path: './docs-out'
 
-      - name: Publica Documentação
+      - name: Publicar documentação
         id: deployment
         uses: actions/deploy-pages@v4
