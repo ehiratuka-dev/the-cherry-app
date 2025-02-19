@@ -1,4 +1,4 @@
-name: Build and deploy docs to GitHub Pages
+name: Compilar e Publicar Documentação no GitHub Pages
 
 on:
   push:
@@ -21,35 +21,31 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      # Passo 1: Checkout do repositório
-      - name: Checkout code
+      - name: Checkout do Repositório
         uses: actions/checkout@v3
 
-      # Passo 2: Configurar Node.js
-      - name: Set up Node.js
+      - name: Configurar NodeJS
         uses: actions/setup-node@v3
         with:
           node-version: 22
 
-      # Passo 3: Instalar dependências
-      - name: Install dependencies
+      - name: Instalar Dependências
         run: npm install
+  
+      - name: Compilar Pacotes
+        run: npm run build
 
-      # Passo 4: Gerar a documentação com TypeDoc
-      - name: Generate documentation
-        run: npx typedoc
+      - name: Compilar Documentação
+        run: npm run docs
 
-      # Passo 5: Configura o GithubPages
-      - name: Setup Pages
+      - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
 
-      # Passo 6: Envia a documentação gerada
-      - name: Upload artifact
+      - name: Envia Documentação
         uses: actions/upload-pages-artifact@v3
         with:
           path: './docs-out'
 
-      # Publica a documentação
-      - name: Deploy to GitHub Pages
+      - name: Publica Documentação
         id: deployment
         uses: actions/deploy-pages@v4
