@@ -1,54 +1,59 @@
 name: Publicar Documentação
 
 on:
-  push:
-    branches: ["main"]
-  workflow_dispatch:
+    workflow_run:
+        workflows: ['Compilar Código']
+        types:
+            - completed
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+    contents: read
+    pages: write
+    id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    group: 'pages'
+    cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout do repositório
-        uses: actions/checkout@v3
+    deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout do repositório
+              uses: actions/checkout@v3
 
-      - name: Configurar NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 22
+            - name: Configurar NodeJS
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 22
 
-      - name: Instalar dependências
-        run: npm install
-  
-      - name: Modificar permissões de scripts
-        run: chmod +x scripts/*
-        
-      - name: Compilar pacotes
-        run: npm run build
+            - name: Instalar dependências
+              run: npm install
 
-      - name: Compilar documentação
-        run: npm run docs
+            - name: Modificar permissões de scripts
+              run: chmod +x scripts/*
 
-      - name: Configurar GitHub Pages
-        uses: actions/configure-pages@v5
+            - name: Baixar pacote The Cherry 25
+              uses: actions/download-artifact@v3
+              with:
+                  name: the-cherry-25
+                  path: dist/
 
-      - name: Enviar documentação
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './docs-out'
+            - name: Compilar documentação
+              run: npm run docs
 
-      - name: Publicar documentação
-        id: deployment
-        uses: actions/deploy-pages@v4
+            - name: Configurar GitHub Pages
+              uses: actions/configure-pages@v5
+
+            - name: Enviar documentação
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  name: the-cherry-docs
+                  path: './docs-out'
+
+            - name: Publicar documentação
+              id: deployment
+              uses: actions/deploy-pages@v4
