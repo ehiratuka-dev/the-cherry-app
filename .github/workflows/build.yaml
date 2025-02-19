@@ -1,6 +1,7 @@
 name: Compilar Código
 
 on:
+    workflow_dispatch:
     push:
         branches:
             - main

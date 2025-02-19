@@ -40,6 +40,8 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                   name: the-cherry-25
+                  run-id: ${{ github.event.workflow_run.id }}
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
                   path: dist/
 
             - name: Compilar documentação
